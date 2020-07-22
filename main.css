@@ -1,0 +1,35 @@
+* {
+	font-family: Arial;
+}
+body {
+	background-color: coral;
+} 
+
+.header1 {
+	font-family: Helvetica;
+}
+
+.btn {
+	Padding: 10px;
+	Color: white;
+}
+.btn-1 {
+	background-color: green;
+}
+.btn-2 {
+	background-color: blue;
+}
+.btn-3 {
+	background-color: red;
+}
+
+#big-blue.large.blue {
+	color: blue;
+	font-size: 200%;
+}
+
+/*
+SELECTORS
+1. Element:  
+2. Class
+*/

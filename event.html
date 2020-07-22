@@ -1,0 +1,76 @@
+<html>
+    <title>
+        Event Handler
+    </title>
+
+    <body onload="notify(this, 'load')"  onresize="notify(this, 'resize')"        >
+        <h2> Date</h2>
+
+        <button type='button' onclick=getDate()> Click me to display the date</button>
+        <br>
+        <input type='text' id='fontsizetext'
+            onmouseover="notify(this, 'mouseover')"
+           onmouseout="notify(this, 'mouseout')"
+          
+           onfocus="notify(this, 'focus')"
+           onblur="notify(this, 'blur')"
+          
+           onmousedown="notify(this, 'mousedown')"
+           onmouseup="notify(this, 'mouseup')"
+           onclick="notify(this, 'click')"
+           ondblclick="notify(this, 'dblclick')"
+ 
+           onselect="notify(this, 'select')"
+           onmousemove="notify(this, 'mousemove')"
+          
+           onkeydown="notify(this, 'keydown')"
+           onkeypress="notify(this, 'keypress')"
+           onkeyup="notify(this, 'keyup')"> 
+
+        <button type='button' onclick=fontSize()> Click me to increase the font size of the date</button>
+        <br>
+        <button type='button' onclick=hideDate()> Click me to hide the date </button>
+        <p id="date"> </p>
+
+        <pre id='pretag'> </pre>
+        
+    </body>
+    <script>
+        // element: button
+        // action string ('clicked')
+        function notify(element, action) {
+            if (action == "mousemove") // Too much output!
+              return;
+
+            document.getElementById('pretag').innerHTML += element;
+            document.getElementById('pretag').innerHTML += ": ";
+            document.getElementById('pretag').innerHTML += action;
+            document.getElementById('pretag').innerHTML += "\n";
+            return
+        }
+        function getDate() {
+            let date = Date();
+            document.getElementById('date').style.display='inline';
+            document.getElementById('date').innerHTML = date;
+            return;
+        }
+
+        function fontSize(){
+            console.log(document.getElementById('fontsizetext').value)
+            let fontsize = document.getElementById('fontsizetext').value;
+            // let fontsize = document.getElementById('fontsizetext').innerHTML;
+            document.getElementById('date').style.fontSize = fontsize;
+            return
+        }
+
+        function fontIncrease() {
+            document.getElementById('date').style.fontSize = "35px";
+            return;
+        }
+
+        function hideDate() {
+            document.getElementById('date').style.display = 'none';
+            return;
+        }
+    </script>
+</html>

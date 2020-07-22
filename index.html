@@ -1,0 +1,58 @@
+<html>
+  <head>
+     <title>JavaScript Events</title>    
+  </head>
+ 
+  <body
+     onload="notify(this, 'load')"
+     onresize="notify(this, 'resize')">
+    
+     <form
+        action="login.html"
+       
+        onsubmit=
+           "notify(this, 'submit'); return confirm('Are you sure')">
+       
+        <input
+           type="text"
+           value="Type here"
+          
+           onmouseover="notify(this, 'mouseover')"
+           onmouseout="notify(this, 'mouseout')"
+          
+           onfocus="notify(this, 'focus')"
+           onblur="notify(this, 'blur')"
+          
+           onmousedown="notify(this, 'mousedown')"
+           onmouseup="notify(this, 'mouseup')"
+           onclick="notify(this, 'click')"
+           ondblclick="notify(this, 'dblclick')"
+           onselect="notify(this, 'select')"
+           onmousemove="notify(this, 'mousemove')"
+          
+           onkeydown="notify(this, 'keydown')"
+           onkeypress="notify(this, 'keypress')"
+           onkeyup="notify(this, 'keyup')">
+       
+        <input type="submit">
+     </form>
+    
+     <hr>
+     <pre id="mynotifyarea"></pre>
+     <hr>
+    
+     <script>
+        function notify(element, eventName)
+        {
+           if (eventName == "mousemove") // Too much output!
+              return;
+           let notifyArea = document.getElementById("mynotifyarea");
+           notifyArea.innerHTML += element;
+           notifyArea.innerHTML += ": ";
+           notifyArea.innerHTML += eventName;
+           notifyArea.innerHTML += "\n";
+        }   
+     </script>
+    
+  </body>
+</html>

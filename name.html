@@ -1,0 +1,25 @@
+<html>
+    <title>
+        Welcome Page
+    </title>
+    <body onload=main()>
+        <p>
+            Hello <strong id="myname"> some name </strong>  and welcome to this website.
+        </p>
+        <ul class='mylist'>
+            <li class='item'> Nicole</li>
+            <li class='item'> Nadine</li>
+        </ul>
+    </body>
+    <script>
+        function main() {
+            document.getElementById("myname").innerHTML = "Nicole";
+        }
+
+        function listchanger() {
+            let mynames = document.getElementsByClassName('item');
+            console.log(mynames);
+            mynames[0].innerHTML= "Martin";
+        }
+    </script>
+</html>
